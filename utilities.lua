@@ -122,9 +122,10 @@ function Utilities.GetSurroundingVectors(target, radius, amount, offset)
 
     local positions = {}
     local angleIncrement = (2 * math.pi) / amount
+    local adjustedOffset = offset / radius -- Adjust the offset relative to the circle's size
 
     for i = 1, amount do
-        local angle = angleIncrement * i + offset
+        local angle = angleIncrement * i + adjustedOffset
         local x = target.X + radius * math.cos(angle)
         local z = target.Z + radius * math.sin(angle)
         table.insert(positions, Vector3.new(x, target.Y, z))
@@ -132,6 +133,7 @@ function Utilities.GetSurroundingVectors(target, radius, amount, offset)
 
     return positions
 end
+
 
 
 return Utilities
