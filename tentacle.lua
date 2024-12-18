@@ -29,7 +29,7 @@ function Tentacle:alignParts()
     local previousPart = self.originPart
 
     for _, part in ipairs(self.parts) do
-        part.CFrame = previousPart.CFrame * CFrame.new(0, -previousPart.Size.Y / 2 - part.Size.Y / 2, 0)
+        part.CFrame = previousPart.CFrame * CFrame.new(0, -previousPart.Size.Z / 2 - part.Size.Z / 2, 0)
         previousPart = part
     end
 end
@@ -39,8 +39,8 @@ function Tentacle:aimAt(targetPosition)
     local currentPosition = self.originPart.Position
 
     for _, part in ipairs(self.parts) do
-        local nextPosition = currentPosition + direction * part.Size.Y
-        part.CFrame = CFrame.new(currentPosition, nextPosition) * CFrame.new(0, -part.Size.Y / 2, 0)
+        local nextPosition = currentPosition + direction * part.Size.Z
+        part.CFrame = CFrame.new(currentPosition, nextPosition) * CFrame.new(0, -part.Size.Z / 2, 0)
         currentPosition = nextPosition
     end
 end
