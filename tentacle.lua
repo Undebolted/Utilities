@@ -38,6 +38,7 @@ function Tentacle:aimAt(targetPosition)
     local currentPosition = self.originPart.Position
 
     for _, part in ipairs(self.parts) do
+        task.wait(0.1)
         local nextPosition = currentPosition + direction * part.Size.Z
         part.CFrame = CFrame.new(currentPosition, nextPosition) * CFrame.new(0, 0, -part.Size.Z / 2)
         currentPosition = nextPosition
@@ -63,3 +64,5 @@ function Tentacle:removePart()
         self:alignParts()
     end
 end
+
+return Tentacle
