@@ -32,7 +32,7 @@ function Tentacle:alignParts()
     local lerpFactor = 0.1  -- Adjust the speed of the lerp
 
     for _, part in ipairs(self.parts) do
-        local targetPosition = previousPart.Position + Vector3.new(0, -previousPart.Size.Y / 2 - part.Size.Y / 2, 0)
+        local targetPosition = previousPart.Position + Vector3.new(0, 0, -previousPart.Size.Z / 2 - part.Size.Z / 2)
         part.CFrame = CFrame.new(
             lerp(previousPart.Position, targetPosition, lerpFactor), 
             previousPart.Position
@@ -48,9 +48,9 @@ function Tentacle:aimAt(targetPosition)
     local lerpFactor = 0.1  -- Adjust the speed of the lerp
 
     for _, part in ipairs(self.parts) do
-        local nextPosition = currentPosition + direction * part.Size.Y
+        local nextPosition = currentPosition + direction * part.Size.Z
         local newPosition = lerp(currentPosition, nextPosition, lerpFactor)
-        part.CFrame = CFrame.new(newPosition, newPosition + direction) * CFrame.new(0, -part.Size.Y / 2, 0)
+        part.CFrame = CFrame.new(newPosition, newPosition + direction) * CFrame.new(0, 0, -part.Size.Z / 2)
         currentPosition = newPosition
     end
 end
