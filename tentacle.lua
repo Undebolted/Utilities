@@ -1,7 +1,8 @@
 local Tentacle = {}
 Tentacle.__index = Tentacle
 
-function Tentacle.new(originPart, partCount, partSizes)
+function Tentacle.new(originPart, partCount, partSizes, transp)
+    local transp = transp or 0.5
     local self = setmetatable({}, Tentacle)
 
     self.originPart = originPart
@@ -15,6 +16,7 @@ function Tentacle.new(originPart, partCount, partSizes)
         part.Anchored = true
         part.CanCollide = false
         part.Parent = originPart.Parent
+        part.Transparency = transp
         table.insert(self.parts, part)
     end
 
