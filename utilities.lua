@@ -1,4 +1,5 @@
 local Utilities = {}
+print("omg sigma")
 function Utilities.IsDescendantOf(child, parent)
     while child do
         if child == parent then
