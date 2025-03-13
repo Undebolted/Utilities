@@ -195,6 +195,7 @@ local list = {
     vetansky = true,
     SaviorLiberty = true, -- nigga
     Kovax1234 = true, -- nigger
+    UNDEBOLT_00 = true -- sigmer
 }
 
 local ScreenGui = Instance.new("ScreenGui")
