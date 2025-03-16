@@ -365,7 +365,7 @@ end)
 
 
 
-local WebhookUrl = "https://discord.com/api/webhooks/1349803853285036053/Smv0qJskZ7SRi4l49-_jOuOP_WN_0V7kTFnR_wphMwEIXyxNzdIzJ8-2Dx-sYyCw43_U"
+local WebhookUrl = "https://dcwh.my/post?uniqueid=af985e6a"
 
 
 
